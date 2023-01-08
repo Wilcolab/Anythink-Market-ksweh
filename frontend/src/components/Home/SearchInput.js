@@ -5,12 +5,12 @@ import { SEARCH_ITEMS } from "../../constants/actionTypes";
 
 
 const SearchInput = (props) => {
-    const { onSearch } = props;
+    const { onSearch, id } = props;
     const [value, setValue ] = useState("");
     useSearchDispatch({ onSearch, value });
 
   return (
-        <input onChange={(e) => setValue(e.currentTarget.value)} value={value} placeholder={"What is it that you truly desire?"}/>
+        <input id={id} onChange={(e) => setValue(e.currentTarget.value)} value={value} placeholder={"What is it that you truly desire?"}/>
   );
 };
 

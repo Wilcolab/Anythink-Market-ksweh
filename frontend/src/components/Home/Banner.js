@@ -10,7 +10,7 @@ const Banner = () => {
         <div>
           <span>A place to </span>
           <span id="get-part">get</span>
-          <span><SearchInput /> </span>
+          <span><SearchInput id="search-box" /></span>
           <span> the cool stuff.</span>
         </div>
       </div>
