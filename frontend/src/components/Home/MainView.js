@@ -3,6 +3,7 @@ import React from "react";
 import agent from "../../agent";
 import { connect } from "react-redux";
 import { CHANGE_TAB } from "../../constants/actionTypes";
+import NoSearchMatches from "./NoSearchMatches";
 
 const YourFeedTab = (props) => {
   if (props.token) {
@@ -85,14 +86,19 @@ const MainView = (props) => {
           <TagFilterTab tag={props.tag} />
         </ul>
       </div>
-
-      <ItemList
+{
+  props.itemsCount > 0 ?
+  <ItemList
         pager={props.pager}
         items={props.items}
         loading={props.loading}
         itemsCount={props.itemsCount}
         currentPage={props.currentPage}
-      />
+      /> : null
+}      
+{
+  props.itemsCount === 0 && props.searchTerm ? <NoSearchMatches searchTerm={props.searchTerm}/> : null
+}
     </div>
   );
 };
