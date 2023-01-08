@@ -27,7 +27,7 @@ const useSearchDispatch = ({ onSearch, value, minChars = 3 }) => {
   
 const mapDispatchToProps = (dispatch) => ({
     onSearch: (term) =>
-            dispatch({ type: SEARCH_ITEMS, payload: agent.Items.byTitle(term) }),
+            dispatch({ type: SEARCH_ITEMS, searchTerm: term, payload: agent.Items.byTitle(term) }),
 });
 
 const ConnectedSearchInput = connect(null, mapDispatchToProps)(SearchInput);
