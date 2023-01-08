@@ -1,3 +1,8 @@
 {
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "editor.formatOnSave": true,
+  "autoimport.filesToScan": "**/*.{ts,tsx,js}"
 }
